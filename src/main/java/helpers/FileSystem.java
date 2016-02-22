@@ -1,5 +1,7 @@
 package helpers;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.io.*;
 
 /**
@@ -29,6 +31,42 @@ public class FileSystem {
 
     public long fileSize(){
         return file.length();
+    }
+
+    @Nullable
+    public String getContentType(){
+        String path = file.getAbsolutePath();
+        int index = path.lastIndexOf('.');
+        if(index == -1) {
+            return null;
+        }
+        String contentType = path.substring(index+1);
+        String result = null;
+        if(contentType.equals("html")){
+            result = "text/html";
+        }
+        if(contentType.equals("css")){
+            result = "text/css";
+        }
+        if(contentType.equals("js")){
+            result = "text/javascript";
+        }
+        if(contentType.equals("jpg")){
+            result = "image/jpeg";
+        }
+        if(contentType.equals("jpeg")){
+            result = "image/jpeg";
+        }
+        if(contentType.equals("png")){
+            result = "image/png";
+        }
+        if(contentType.equals("gif")){
+            result = "image/gif";
+        }
+        if(contentType.equals("swf")){
+            result = "application/x-shockwave-flash";
+        }
+        return result;
     }
 
 }

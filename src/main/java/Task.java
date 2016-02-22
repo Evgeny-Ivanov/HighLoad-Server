@@ -31,12 +31,12 @@ public class Task extends RecursiveAction {
             Request request = new Request();
             while (true) {
                 String buf = br.readLine();
-                System.out.println(buf);
-                message.append(buf);
-                request.newHeader(buf);
                 if(buf == null || buf.trim().isEmpty()){
                     break;
                 }
+                System.out.println(buf);
+                message.append(buf);
+                request.newHeader(buf);
             }
             Response response = new Response(request);
             response.writeResponse(out);

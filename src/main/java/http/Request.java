@@ -5,6 +5,7 @@ package http;
  */
 public class Request {
     private String pathFile = null;
+    private String method = null;
 
     public Request(){
 
@@ -13,9 +14,10 @@ public class Request {
     public void newHeader(String line){
         String nameHeader = getNameHeader(line);
         if(nameHeader != null){
-            if(nameHeader.equals("GET") || nameHeader.equals("HEAD")){
-                parseMethod(line);
-            }
+            if(nameHeader.equals("GET")) method = "GET";
+            if(nameHeader.equals("HEAD")) method = "HEAD";
+            if(nameHeader.equals("POST")) method = "POST";
+            if(isMethod(nameHeader)) parseMethod(line);
             //...
         }
     }
@@ -35,6 +37,16 @@ public class Request {
 
     public String getPathFile(){
         return pathFile;
+    }
+
+    public String getMethod(){
+        return method;
+    }
+
+    private boolean isMethod(String nameHeader){
+        return nameHeader.equals("GET") ||
+               nameHeader.equals("HEAD") ||
+               nameHeader.equals("POST");
     }
 
 }
