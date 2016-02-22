@@ -1,6 +1,8 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+
+import http.Request;
+import http.Response;
+
+import java.io.*;
 import java.net.Socket;
 import java.util.concurrent.RecursiveAction;
 
@@ -11,27 +13,36 @@ public class Task extends RecursiveAction {
     Socket socket;
     InputStream in;
     OutputStream out;
-    String response = "OK";
+    BufferedReader br;
+    BufferedWriter writer;
 
     public Task(Socket socket) throws IOException{
         this.socket = socket;
         in = socket.getInputStream();
         out = socket.getOutputStream();
+        br = new BufferedReader(new InputStreamReader(in));
+        writer = new BufferedWriter(new OutputStreamWriter(out));
     }
 
     @Override
     protected void compute(){
         try {
-            byte[] buf = response.getBytes();
             StringBuilder message = new StringBuilder();
-            int c;
-            while ((c = in.read()) != -1) {
-                System.out.print((char)c);
-                message.append((char) c);
+            Request request = new Request();
+            while (true) {
+                String buf = br.readLine();
+                System.out.println(buf);
+                message.append(buf);
+                request.newHeader(buf);
+                if(buf == null || buf.trim().isEmpty()){
+                    break;
+                }
             }
-            out.write(buf);
-            System.out.println(message.toString());
+            Response response = new Response(request);
+            response.writeResponse(out);
             socket.close();
+            System.out.println(message.toString());
+
         }catch (IOException e){
             e.printStackTrace();
         }
