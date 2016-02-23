@@ -9,7 +9,7 @@ import java.io.*;
  */
 public class FileSystem {
     public static final String INDEX_DIR = "/index.html";
-    public static final String DOCUMENT_ROOT = "/home/stalker/highload/";
+    public static final String DOCUMENT_ROOT = "/home/stalker/myproject1/frontend-stub-1/public_html/";
     private File file;
 
     public FileSystem(String path){

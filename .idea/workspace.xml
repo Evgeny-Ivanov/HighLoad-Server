@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc95290e-0c28-4c03-b338-5a989f2c4e0a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_15_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server.iml" afterPath="$PROJECT_DIR$/Server.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Task.java" afterPath="$PROJECT_DIR$/src/main/java/Task.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/helpers/FileSystem.java" afterPath="$PROJECT_DIR$/src/main/java/helpers/FileSystem.java" />
     </list>
     <ignored path="Server.iws" />
@@ -27,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.20735785">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -41,10 +47,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,10 +57,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/http/Response.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +78,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-              <folding />
+              <folding>
+                <element signature="e#912#913#0" expanded="false" />
+                <element signature="e#943#944#0" expanded="false" />
+                <element signature="e#975#976#0" expanded="false" />
+                <element signature="e#1004#1005#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,22 +92,31 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Task.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/helpers/FileSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1049#1050#0" expanded="false" />
+                <element signature="e#1085#1086#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileSystem.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/helpers/FileSystem.java">
+      <file leaf-file-name="File.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/File.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5344828">
-              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="274" column="11" selection-start-line="274" selection-start-column="11" selection-end-line="274" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,11 +151,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/http/Request.java" />
         <option value="$PROJECT_DIR$/src/main/java/http/Response.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/helpers/FileSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -154,6 +171,16 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1919" />
@@ -184,6 +211,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -310,8 +339,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -786,12 +813,13 @@
       <workItem from="1456131824670" duration="8101000" />
       <workItem from="1456141280478" duration="4416000" />
       <workItem from="1456163183469" duration="7965000" />
-      <workItem from="1456222871832" duration="1539000" />
+      <workItem from="1456222871832" duration="4111000" />
+      <workItem from="1456228444869" duration="4301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29011000" />
+    <option name="totallyTimeSpent" value="35884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -804,17 +832,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1919" height="1055" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27301928" sideWeight="0.45537147" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.64882225" sideWeight="0.41795832" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41006425" sideWeight="0.5531801" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28586724" sideWeight="0.5900588" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41006425" sideWeight="0.44681987" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3308351" sideWeight="0.48957777" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28586724" sideWeight="0.4099412" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.48530197" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1555318" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -864,10 +892,80 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/http/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/http/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#943#944#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/helpers/FileSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <folding>
+            <element signature="e#1049#1050#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="994" column="0" selection-start-line="994" selection-start-column="0" selection-end-line="994" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -875,9 +973,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -893,7 +989,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#943#944#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -901,9 +1002,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +1011,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -937,9 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -955,9 +1053,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -965,9 +1061,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +1069,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#943#944#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -983,7 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2587" column="41" selection-start-line="2587" selection-start-column="31" selection-end-line="2587" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,9 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +1098,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1026,9 +1123,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,7 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2587" column="41" selection-start-line="2587" selection-start-column="31" selection-end-line="2587" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,9 +1138,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,14 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.034254145">
           <caret line="2587" column="41" selection-start-line="2587" selection-start-column="31" selection-end-line="2587" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,14 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325967">
           <caret line="1612" column="25" selection-start-line="1612" selection-start-column="25" selection-end-line="1612" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325967">
-          <caret line="570" column="16" selection-start-line="570" selection-start-column="16" selection-end-line="570" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,33 +1186,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/http/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="274" column="11" selection-start-line="274" selection-start-column="11" selection-end-line="274" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,17 +1198,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#943#944#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/http/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/helpers/FileSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5344828">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20735785">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

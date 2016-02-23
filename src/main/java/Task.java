@@ -4,6 +4,7 @@ import http.Response;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.URLDecoder;
 import java.util.concurrent.RecursiveAction;
 
 /**
@@ -27,21 +28,22 @@ public class Task extends RecursiveAction {
     @Override
     protected void compute(){
         try {
-            StringBuilder message = new StringBuilder();
+            //StringBuilder message = new StringBuilder();
             Request request = new Request();
             while (true) {
                 String buf = br.readLine();
                 if(buf == null || buf.trim().isEmpty()){
                     break;
                 }
+                buf = URLDecoder.decode(buf, "UTF-8");
                 System.out.println(buf);
-                message.append(buf);
+                //message.append(buf);
                 request.newHeader(buf);
             }
             Response response = new Response(request);
             response.writeResponse(out);
             socket.close();
-            System.out.println(message.toString());
+            //System.out.println(message.toString());
 
         }catch (IOException e){
             e.printStackTrace();

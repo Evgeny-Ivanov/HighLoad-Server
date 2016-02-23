@@ -20,11 +20,6 @@ public class Main {
         while(true){
             Socket socket = serverSocket.accept();
             pool.execute(new Task(socket));
-            try {
-                Thread.sleep(TIME_SLEEP);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
         }
 
     }
