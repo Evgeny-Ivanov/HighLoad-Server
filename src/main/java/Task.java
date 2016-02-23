@@ -28,23 +28,32 @@ public class Task extends RecursiveAction {
     @Override
     protected void compute(){
         try {
-            //StringBuilder message = new StringBuilder();
             Request request = new Request();
             while (true) {
                 String buf = br.readLine();
                 if(buf == null || buf.trim().isEmpty()){
                     break;
                 }
-                buf = URLDecoder.decode(buf, "UTF-8");
                 System.out.println(buf);
-                //message.append(buf);
                 request.newHeader(buf);
             }
+            System.out.println();
             Response response = new Response(request);
             response.writeResponse(out);
-            socket.close();
-            //System.out.println(message.toString());
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            closeAll();
+        }
+    }
 
+    public void closeAll(){
+        try {
+            in.close();
+            out.close();
+            br.close();
+            writer.close();
+            socket.close();
         }catch (IOException e){
             e.printStackTrace();
         }

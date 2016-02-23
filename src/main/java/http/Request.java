@@ -1,5 +1,8 @@
 package http;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 /**
  * Created by stalker on 22.02.16.
  */
@@ -31,6 +34,11 @@ public class Request {
     }
 
     public void parseMethod(String line){
+        try {
+            line = URLDecoder.decode(line, "UTF-8");
+        }catch (UnsupportedEncodingException e){
+            e.printStackTrace();
+        }
         String[] array = line.split(" ");
         pathFile = array[1];
     }

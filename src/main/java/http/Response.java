@@ -23,7 +23,7 @@ public class Response {
     String date = null;//Дата и время отправки сообщения
     String connection = null;
 
-    private final String httpVersion = "HTTP/1.1";
+    private static final String HTTP_VERSION = "HTTP/1.1";
     private String status = "200 OK";
     private Request request;
 
@@ -35,29 +35,16 @@ public class Response {
             contentLength = fileSystem.fileSize();
             contentType = fileSystem.getContentType();
         }
-        if(request.getMethod().equals("POST")){
-            status = "405 Method Not Allowed";
-        }
+        setStatus(request);
         date = getServerTime();
         server = "myServer";
         connection = "close";
     }
 
     public void writeResponse(OutputStream out) throws IOException{
-        if(!fileSystem.isFileExists()) status = "404 Not Found";
         writeHeaders(out);
-        if(request.getMethod().equals("GET")) {
-            try {
-                BufferedReader reader = fileSystem.getFile();
-                out.write("\n\n".getBytes());
-                String buf;
-                while ((buf = reader.readLine()) != null) {
-                    System.out.println(buf);
-                    out.write((buf + '\n').getBytes());
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+        if(request.getMethod().equals("GET") && fileSystem.isFileExists()) {
+            giveFile(out);
         }
     }
 
@@ -71,7 +58,7 @@ public class Response {
 
     private void writeHeaders(OutputStream out) throws IOException{
         StringBuilder buf = new StringBuilder();
-        buf.append(httpVersion).append(' ').append(status).append('\n');
+        buf.append(HTTP_VERSION).append(' ').append(status).append('\n');
         out.write(buf.toString().getBytes());
         if(!isSupports()) return;
 
@@ -107,6 +94,32 @@ public class Response {
         String method = request.getMethod();
         return method.equals("GET") ||
                method.equals("HEAD");
+
+    }
+
+    private void giveFile(OutputStream out) throws IOException{
+        try {
+            BufferedReader reader = fileSystem.getFile();
+            out.write("\n\n".getBytes());
+            String buf;
+            while ((buf = reader.readLine()) != null) {
+                out.write((buf + '\n').getBytes());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setStatus(Request request){
+        if(fileSystem != null && !fileSystem.canRead()){
+            status = "403 Forbidden";
+        }
+        if(fileSystem == null || !fileSystem.isFileExists()) {
+            status = "404 Not Found";
+        }
+        if(request.getMethod().equals("POST")){
+            status = "405 Method Not Allowed";
+        }
 
     }
 }
