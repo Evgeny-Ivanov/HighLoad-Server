@@ -8,12 +8,17 @@ import java.io.*;
  * Created by stalker on 22.02.16.
  */
 public class FileSystem {
-
-    public static final String DOCUMENT_ROOT = "/home/stalker";
+    public static final String INDEX_DIR = "/index.html";
+    public static final String DOCUMENT_ROOT = "/home/stalker/highload/";
     private File file;
 
     public FileSystem(String path){
         file = new File(DOCUMENT_ROOT + path);
+        if(file.isDirectory()){
+            StringBuilder builder = new StringBuilder();
+            builder.append(DOCUMENT_ROOT).append(path).append(INDEX_DIR);
+            file = new File(builder.toString());
+        }
     }
 
     public BufferedReader getFile() throws FileNotFoundException{
