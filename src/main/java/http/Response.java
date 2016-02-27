@@ -58,28 +58,28 @@ public class Response {
 
     private void writeHeaders(OutputStream out) throws IOException{
         StringBuilder buf = new StringBuilder();
-        buf.append(HTTP_VERSION).append(' ').append(status).append('\n');
+        buf.append(HTTP_VERSION).append(' ').append(status).append("\r\n");
         out.write(buf.toString().getBytes());
         if(!isSupports()) return;
 
         if(contentLength != null){
             buf.setLength(0);
-            buf.append("Content-Length:").append(' ').append(contentLength).append('\n');
+            buf.append("Content-Length:").append(' ').append(contentLength).append("\r\n");
             out.write(buf.toString().getBytes());
         }
         if(contentType != null){
             buf.setLength(0);
-            buf.append("Content-Type:").append(' ').append(contentType).append('\n');
+            buf.append("Content-Type:").append(' ').append(contentType).append("\r\n");
             out.write(buf.toString().getBytes());
         }
         if(date != null){
             buf.setLength(0);
-            buf.append("Date:").append(' ').append(date).append('\n');
+            buf.append("Date:").append(' ').append(date).append("\r\n");
             out.write(buf.toString().getBytes());
         }
         if(server != null){
             buf.setLength(0);
-            buf.append("Server:").append(' ').append(server).append('\n');
+            buf.append("Server:").append(' ').append(server).append("\r\n");
             out.write(buf.toString().getBytes());
         }
         if(connection != null){
@@ -87,7 +87,7 @@ public class Response {
             buf.append("Connection:").append(' ').append(connection);
             out.write(buf.toString().getBytes());
         }
-
+        out.write("\r\n\r\n".getBytes());
     }
 
     private boolean isSupports(){
@@ -100,7 +100,6 @@ public class Response {
     private void giveFile(OutputStream out) throws IOException{
         try {
             BufferedReader reader = fileSystem.getFile();
-            out.write("\n\n".getBytes());
             String buf;
             while ((buf = reader.readLine()) != null) {
                 out.write((buf + '\n').getBytes());
@@ -119,6 +118,9 @@ public class Response {
         }
         if(request.getMethod().equals("POST")){
             status = "405 Method Not Allowed";
+        }
+        if(fileSystem != null && fileSystem.isIndexDir() && !fileSystem.isFileExists()){
+            status = "403 Forbidden";
         }
 
     }

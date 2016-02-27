@@ -34,13 +34,28 @@ public class Request {
     }
 
     public void parseMethod(String line){
+
+        int indexSpace1 = line.indexOf(' ');
+        String buf = line.substring(indexSpace1+1);
+        int indexSpace2 = buf.indexOf(' ');
+        pathFile = buf.substring(0,indexSpace2);
+
         try {
-            line = URLDecoder.decode(line, "UTF-8");
+            pathFile = URLDecoder.decode(pathFile, "UTF-8");
         }catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }
-        String[] array = line.split(" ");
-        pathFile = array[1];
+
+        int index2 = pathFile.indexOf('?');
+        if(index2 != -1)
+            pathFile = pathFile.substring(0,index2);
+
+        int index3 = pathFile.indexOf('#');
+        if(index3 != -1)
+            pathFile = pathFile.substring(0,index3);
+
+        if(pathFile.contains("../"))
+            pathFile = null;
     }
 
     public String getPathFile(){

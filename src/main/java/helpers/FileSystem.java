@@ -11,6 +11,7 @@ public class FileSystem {
     public static final String INDEX_DIR = "/index.html";
     public static String DOCUMENT_ROOT = "/home/stalker/myproject1/frontend-stub-1/public_html/";
     private File file;
+    private boolean isIndexDir = false;
 
     public FileSystem(String path){
         file = new File(DOCUMENT_ROOT + path);
@@ -18,6 +19,7 @@ public class FileSystem {
             StringBuilder builder = new StringBuilder();
             builder.append(DOCUMENT_ROOT).append(path).append(INDEX_DIR);
             file = new File(builder.toString());
+            isIndexDir = true;
         }
     }
 
@@ -32,6 +34,10 @@ public class FileSystem {
             return true;
         }
         return false;
+    }
+
+    public boolean isIndexDir(){
+        return isIndexDir;
     }
 
     public boolean canRead(){
