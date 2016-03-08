@@ -119,6 +119,7 @@ public class Response {
 
     private void giveFile(SelectionKey key) throws IOException{
         SocketChannel socketChannel = (SocketChannel)key.channel();
+
         ByteBuffer buffer = ByteBuffer.allocate(memory);
         if(fileChannel.read(buffer) < 0){
             socketChannel.close();

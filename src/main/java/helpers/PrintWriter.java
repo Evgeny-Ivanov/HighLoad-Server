@@ -13,14 +13,14 @@ import java.nio.charset.Charset;
  * Created by stalker on 03.03.16.
  */
 public class PrintWriter {
-    private int memory = 4096;
+    private int memory = 4096*10;
     public void read(SelectionKey key) {
         try {
             SocketChannel channel = (SocketChannel) key.channel();
             ByteBuffer buf = ByteBuffer.allocateDirect(memory);
             int num = 0;
             if ((num = channel.read(buf)) < 0) {
-
+                key.interestOps(SelectionKey.OP_WRITE);
             } else {
                 buf.flip();
                 StringBuilder builder = (StringBuilder) key.attachment();

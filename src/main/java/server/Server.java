@@ -1,62 +1,33 @@
 package server;
 
 import helpers.PrintWriter;
-import http.Request;
-import http.Response;
 
 import java.io.IOException;
-import java.net.Socket;
 import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.SocketChannel;
-import java.util.Iterator;
-import java.util.Set;
 import java.util.concurrent.RecursiveAction;
 
 /**
  * Created by stalker on 02.03.16.
  */
 public class Server extends RecursiveAction {
-    Selector selector;
-    PrintWriter printWriter;
-    public Server() {
-        try {
-            selector = Selector.open();
-            printWriter = new PrintWriter();
-        }catch (IOException e){
-            e.printStackTrace();
-            System.exit(1);
-        }
-    }
-
-    public void register(Socket socket) throws IOException {
-        SocketChannel channel = socket.getChannel();
-        channel.configureBlocking(false);
-        channel.register(selector, SelectionKey.OP_READ);
+    private int task;
+    private SelectionKey key;
+    public Server(int task,SelectionKey key) {
+        this.task = task;
+        this.key = key;
     }
 
     @Override
     protected void compute(){
-        while (true){
+        PrintWriter printWriter = new PrintWriter();
+
+        if(task == SelectionKey.OP_READ){
+            printWriter.read(key);
+        }
+
+        if(task == SelectionKey.OP_WRITE){
             try {
-                int count = selector.selectNow();
-                if (count == 0) {
-                    continue;
-                }
-
-                Set<SelectionKey> selectedKeys = selector.selectedKeys();
-                Iterator<SelectionKey> keyIterator = selectedKeys.iterator();
-                while(keyIterator.hasNext()) {
-                    SelectionKey key = keyIterator.next();
-                    if (key.isReadable()) {
-                        printWriter.read(key);
-                    }
-                    if(key.isWritable()){
-                        printWriter.write(key);
-                    }
-
-                }
-                keyIterator.remove();
+                printWriter.write(key);
             }catch (IOException e){
                 e.printStackTrace();
             }
