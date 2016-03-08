@@ -43,7 +43,7 @@ public class Request {
         try {
             pathFile = URLDecoder.decode(pathFile, "UTF-8");
         }catch (UnsupportedEncodingException e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         int index2 = pathFile.indexOf('?');

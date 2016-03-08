@@ -34,14 +34,14 @@ public class Task extends RecursiveAction {
                 if(buf == null || buf.trim().isEmpty()){
                     break;
                 }
-                System.out.println(buf);
+                //System.out.println(buf);
                 request.newHeader(buf);
             }
-            System.out.println();
+            //System.out.println();
             Response response = new Response(request);
             response.writeResponse(out);
         }catch (IOException e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }finally {
             closeAll();
         }
@@ -55,7 +55,7 @@ public class Task extends RecursiveAction {
             writer.close();
             socket.close();
         }catch (IOException e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 

@@ -105,7 +105,7 @@ public class Response {
                 out.write((buf + '\n').getBytes());
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
