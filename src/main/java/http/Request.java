@@ -25,6 +25,13 @@ public class Request {
         }
     }
 
+    public void addHeaders(String headers){
+        String[] buf = headers.split("\n");
+        for(String header: buf){
+            newHeader(header);
+        }
+    }
+
     public String getNameHeader(String line){
         int index = line.indexOf(' ');
         if(index != -1){

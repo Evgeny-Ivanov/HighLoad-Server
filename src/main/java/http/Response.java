@@ -2,10 +2,11 @@ package http;
 
 import helpers.FileSystem;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
+import java.nio.channels.*;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -16,16 +17,22 @@ import java.util.TimeZone;
  */
 public class Response {
     private FileSystem fileSystem = null;
+    private int memory = 4096;
 
     String server = null;//Информация о сервере
     Long contentLength = null;//Размер страницы в байтах
     String contentType = null;//Тип MIME страницы
     String date = null;//Дата и время отправки сообщения
     String connection = null;
+    boolean isWriteHeadersComplet = false;
 
     private static final String HTTP_VERSION = "HTTP/1.1";
     private String status = "200 OK";
     private Request request;
+    private String response;
+    private ReadableByteChannel channel;
+    FileChannel fileChannel = null;
+
 
     public Response(Request request){
         this.request = request;
@@ -39,12 +46,24 @@ public class Response {
         date = getServerTime();
         server = "myServer";
         connection = "close";
+
+        response = prepareResponse();
+        InputStream stream = new ByteArrayInputStream(response.getBytes());
+        channel = Channels.newChannel(stream);
+        try {//с этим надо поосторожнее
+            fileChannel = fileSystem.getFile();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
-    public void writeResponse(OutputStream out) throws IOException{
-        writeHeaders(out);
+    public void writeResponse(SelectionKey key) throws IOException{
+        if(!isWriteHeadersComplet) writeHeaders(key);
         if(request.getMethod().equals("GET") && fileSystem.isFileExists()) {
-            giveFile(out);
+            giveFile(key);
+        } else {
+            SocketChannel socketChannel = (SocketChannel)key.channel();
+            socketChannel.close();
         }
     }
 
@@ -56,38 +75,39 @@ public class Response {
         return dateFormat.format(calendar.getTime());
     }
 
-    private void writeHeaders(OutputStream out) throws IOException{
+    public void writeHeaders(SelectionKey key) throws IOException{
+        SocketChannel socketChannel = (SocketChannel)key.channel();
+        ByteBuffer buffer = ByteBuffer.allocate(memory);
+        if (channel.read(buffer) < 0) {
+            isWriteHeadersComplet = true;
+        } else {
+            buffer.rewind();
+            socketChannel.write(buffer);
+        }
+    }
+
+    private String prepareResponse(){
         StringBuilder buf = new StringBuilder();
         buf.append(HTTP_VERSION).append(' ').append(status).append("\r\n");
-        out.write(buf.toString().getBytes());
-        if(!isSupports()) return;
+        if(!isSupports()) return buf.toString();
 
         if(contentLength != null){
-            buf.setLength(0);
             buf.append("Content-Length:").append(' ').append(contentLength).append("\r\n");
-            out.write(buf.toString().getBytes());
         }
         if(contentType != null){
-            buf.setLength(0);
             buf.append("Content-Type:").append(' ').append(contentType).append("\r\n");
-            out.write(buf.toString().getBytes());
         }
         if(date != null){
-            buf.setLength(0);
             buf.append("Date:").append(' ').append(date).append("\r\n");
-            out.write(buf.toString().getBytes());
         }
         if(server != null){
-            buf.setLength(0);
             buf.append("Server:").append(' ').append(server).append("\r\n");
-            out.write(buf.toString().getBytes());
         }
         if(connection != null){
-            buf.setLength(0);
             buf.append("Connection:").append(' ').append(connection);
-            out.write(buf.toString().getBytes());
         }
-        out.write("\r\n\r\n".getBytes());
+        buf.append("\r\n\r\n");
+        return buf.toString();
     }
 
     private boolean isSupports(){
@@ -97,15 +117,16 @@ public class Response {
 
     }
 
-    private void giveFile(OutputStream out) throws IOException{
-        try {
-            BufferedReader reader = fileSystem.getFile();
-            String buf;
-            while ((buf = reader.readLine()) != null) {
-                out.write((buf + '\n').getBytes());
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+    private void giveFile(SelectionKey key) throws IOException{
+        SocketChannel socketChannel = (SocketChannel)key.channel();
+        ByteBuffer buffer = ByteBuffer.allocate(memory);
+        if(fileChannel.read(buffer) < 0){
+            socketChannel.close();
+            fileChannel.close();
+        } else {
+            buffer.flip();
+            socketChannel.write(buffer);
+            buffer.clear();
         }
     }
 

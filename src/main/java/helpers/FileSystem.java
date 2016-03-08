@@ -3,13 +3,16 @@ package helpers;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Created by stalker on 22.02.16.
  */
 public class FileSystem {
     public static final String INDEX_DIR = "/index.html";
-    public static String DOCUMENT_ROOT = "/home/stalker/myproject1/frontend-stub-1/public_html/";
+    public static String DOCUMENT_ROOT = "/home/stalker/highload/http-test-suite";
     private File file;
     private boolean isIndexDir = false;
 
@@ -23,10 +26,9 @@ public class FileSystem {
         }
     }
 
-    public BufferedReader getFile() throws FileNotFoundException{
+    public FileChannel getFile() throws FileNotFoundException{
         FileInputStream in = new FileInputStream(file.getAbsoluteFile());
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-        return reader;
+        return in.getChannel();
     }
 
     public boolean isFileExists(){
