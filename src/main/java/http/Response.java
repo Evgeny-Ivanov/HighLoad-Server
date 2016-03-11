@@ -2,10 +2,7 @@ package http;
 
 import helpers.FileSystem;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -99,14 +96,17 @@ public class Response {
 
     private void giveFile(OutputStream out) throws IOException{
         try {
-            BufferedReader reader = fileSystem.getFile();
-            String buf;
-            while ((buf = reader.readLine()) != null) {
-                out.write((buf + '\n').getBytes());
+            FileInputStream reader = fileSystem.getFile();
+            byte[] chunk = new byte[16 * 1024];
+            int lenght;
+            while((lenght = reader.read(chunk)) > 0) {
+                out.write(chunk, 0, lenght);
             }
+            out.flush();
         } catch (FileNotFoundException e) {
             //e.printStackTrace();
         }
+
     }
 
     private void setStatus(Request request){

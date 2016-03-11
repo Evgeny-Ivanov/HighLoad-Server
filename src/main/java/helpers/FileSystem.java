@@ -23,9 +23,8 @@ public class FileSystem {
         }
     }
 
-    public BufferedReader getFile() throws FileNotFoundException{
-        FileInputStream in = new FileInputStream(file.getAbsoluteFile());
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+    public FileInputStream getFile() throws FileNotFoundException{
+        FileInputStream reader = new FileInputStream(file.getAbsoluteFile());
         return reader;
     }
 
